@@ -9,21 +9,26 @@
 #import "CardGameViewController.h"
 
 @interface CardGameViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
+@property (nonatomic) unsigned flipsCount;
 @end
 
 @implementation CardGameViewController
 
-- (void)viewDidLoad
+- (void)setFlipsCount:(unsigned)flipsCount
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    _flipsCount = flipsCount;
+    self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %u", self.flipsCount];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)cardTapped:(UIButton *)sender {
+    if ([sender.currentTitle length] > 0) {
+        [sender setTitle:@"" forState:UIControlStateNormal];
+    } else {
+        [sender setTitle:@"A♠️" forState:UIControlStateNormal];
+    }
+    
+    self.flipsCount++;
 }
 
 @end
