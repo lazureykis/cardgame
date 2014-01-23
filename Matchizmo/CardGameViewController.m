@@ -37,14 +37,13 @@
     if ([sender.currentTitle length]) {
         [sender setTitle:@"" forState:UIControlStateNormal];
         [sender setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
+        self.flipsCount++;
     } else {
         Card *card = [self.deck drawRandomCard];
         if (card) {
             [sender setTitle:card.contents forState:UIControlStateNormal];
             [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
             self.flipsCount++;
-        } else {
-            [sender removeFromSuperview];
         }
     }
 }
