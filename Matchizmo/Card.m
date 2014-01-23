@@ -14,26 +14,26 @@
 @synthesize chosen = _chosen;
 @synthesize matched = _matched;
 
--(int)match:(Card *)card
-{
-    int score = 0;
-    
-    if ([self.contents isEqualToString:card.contents]) {
-        score = 1;
-    }
-         
-    return score;
-}
-
-//-(int)match:(NSArray *)cards
+//-(int)match:(Card *)card
 //{
 //    int score = 0;
 //    
-//    for (Card *card in cards) {
-//        score++;
+//    if ([self.contents isEqualToString:card.contents]) {
+//        score = 1;
 //    }
-//    
+//         
 //    return score;
 //}
+
+-(int)match:(NSArray *)cards
+{
+    int score = 0;
+    
+    for (Card *card in cards) {
+        score++;
+    }
+    
+    return score;
+}
 
 @end
