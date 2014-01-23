@@ -38,7 +38,8 @@
         [sender setTitle:@"" forState:UIControlStateNormal];
         [sender setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
     } else {
-        [sender setTitle:@"A♠️" forState:UIControlStateNormal];
+        Card *card = [self.deck drawRandomCard];
+        [sender setTitle:card.contents forState:UIControlStateNormal];
         [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
     }
     
