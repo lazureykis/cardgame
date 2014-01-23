@@ -39,9 +39,12 @@
         [sender setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
     } else {
         Card *card = [self.deck drawRandomCard];
-        NSString *title = card ? card.contents : @"no cards";
-        [sender setTitle:title forState:UIControlStateNormal];
-        [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
+        if (card) {
+            [sender setTitle:title forState:UIControlStateNormal];
+            [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
+        } else {
+            [sender removeFromSuperview];
+        }
     }
     
     self.flipsCount++;
