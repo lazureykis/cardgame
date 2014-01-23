@@ -11,9 +11,21 @@
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) unsigned flipsCount;
+@property (strong, nonatomic) Deck *deck;
 @end
 
 @implementation CardGameViewController
+
+@synthesize deck = _deck;
+
+- (Deck*)deck
+{
+    if (!_deck)
+    {
+        _deck = [[PlayingCardDeck alloc] init];
+    }
+    return _deck;
+}
 
 - (void)setFlipsCount:(unsigned)flipsCount
 {
