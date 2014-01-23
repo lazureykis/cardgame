@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Павел Лазурейкис. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface CardGameAppDelegate : UIResponder <UIApplicationDelegate>
 
