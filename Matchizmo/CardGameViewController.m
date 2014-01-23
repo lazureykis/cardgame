@@ -24,8 +24,10 @@
 - (IBAction)cardTapped:(UIButton *)sender {
     if ([sender.currentTitle length] > 0) {
         [sender setTitle:@"" forState:UIControlStateNormal];
+        [sender setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
     } else {
         [sender setTitle:@"A♠️" forState:UIControlStateNormal];
+        [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
     }
     
     self.flipsCount++;

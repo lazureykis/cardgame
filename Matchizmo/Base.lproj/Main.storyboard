@@ -16,19 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VT-Zl-qKR">
-                                <rect key="frame" x="100" y="198" width="121" height="171"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VT-Zl-qKR">
+                                <rect key="frame" x="124" y="229" width="72" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="RRF-6Q-wVM"/>
+                                    <constraint firstAttribute="width" constant="72" id="osg-94-INe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="A♠️">
+                                <state key="normal" title="A♠️" backgroundImage="cardfront">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="cardTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8oF-V2-oeP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flips: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7L-gS-Ds9">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7L-gS-Ds9">
                                 <rect key="frame" x="20" y="529" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -37,6 +40,13 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="5VT-Zl-qKR" secondAttribute="centerY" id="BVR-Fh-ZBb"/>
+                            <constraint firstAttribute="centerX" secondItem="5VT-Zl-qKR" secondAttribute="centerX" id="HiI-t0-10S"/>
+                            <constraint firstItem="mVw-gj-cgX" firstAttribute="top" secondItem="f7L-gS-Ds9" secondAttribute="bottom" constant="18" id="ITQ-Ci-pAW"/>
+                            <constraint firstAttribute="trailing" secondItem="f7L-gS-Ds9" secondAttribute="trailing" constant="20" id="Jwt-16-fap"/>
+                            <constraint firstItem="f7L-gS-Ds9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="RxI-9f-dlS"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="flipsLabel" destination="f7L-gS-Ds9" id="BeV-DY-ws4"/>
@@ -46,6 +56,9 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="cardfront" width="64" height="96"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
