@@ -21,8 +21,8 @@
     self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %u", self.flipsCount];
 }
 
-- (IBAction)cardTapped:(UIButton *)sender {
-    if ([sender.currentTitle length] > 0) {
+- (IBAction)touchCardButton:(UIButton *)sender {
+    if ([sender.currentTitle length]) {
         [sender setTitle:@"" forState:UIControlStateNormal];
         [sender setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
     } else {
