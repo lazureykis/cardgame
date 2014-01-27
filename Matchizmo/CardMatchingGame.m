@@ -16,6 +16,8 @@
 
 @implementation CardMatchingGame
 
+@synthesize started = _started;
+
 -(NSMutableArray*)cards
 {
     if (!_cards) _cards = [[NSMutableArray alloc] init];

@@ -11,6 +11,7 @@
 
 @interface CardGameViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UIButton *startNewGameButton;
 @property (strong, nonatomic) Deck *deck;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) CardMatchingGame *game;
@@ -78,6 +79,7 @@
         cardButton.enabled = !card.isMatched;
     }
     
+    self.startNewGameButton.enabled = self.game.isStarted;
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
 }
 
