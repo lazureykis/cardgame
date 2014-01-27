@@ -21,6 +21,16 @@
 @synthesize deck = _deck;
 @synthesize game = _game;
 
+-(void)resetGame
+{
+    _game = nil;
+}
+
+- (IBAction)startNewGameTouched:(id)sender {
+    [self resetGame];
+    [self updateUI];
+}
+
 - (CardMatchingGame*)game
 {
     if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
