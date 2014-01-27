@@ -10,6 +10,7 @@
 
 @interface CardMatchingGame()
 @property (nonatomic, readwrite) NSInteger score;
+@property (nonatomic, readwrite) BOOL started;
 @property (nonatomic, strong) NSMutableArray *cards; // of Card
 @end
 
@@ -45,6 +46,11 @@
     return self;
 }
 
+-(BOOL)isStarted
+{
+    return _started;
+}
+
 static const int MISMATCH_PENALTY = 2;
 static const int MATCH_BONUS = 4;
 static const int COST_TO_CHOOSE = 1;
@@ -52,6 +58,8 @@ static const int COST_TO_CHOOSE = 1;
 -(void)chooseCardAtIndex:(NSUInteger)index
 {
     Card *card = [self cardAtIndex:index];
+    
+    self.started = YES;
     
     if (!card.isMatched) {
         if (card.isChosen) {
