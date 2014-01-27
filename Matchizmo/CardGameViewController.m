@@ -27,8 +27,21 @@
 }
 
 - (IBAction)startNewGameTouched:(id)sender {
-    [self resetGame];
-    [self updateUI];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New game"
+                                                    message:@"Are you sure?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"OK", nil];
+    [alert show];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex) {
+        [self resetGame];
+        [self updateUI];
+    }
 }
 
 - (CardMatchingGame*)game
