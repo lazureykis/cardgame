@@ -25,6 +25,7 @@
 -(void)resetGame
 {
     _game = nil;
+    [self updateUI];
 }
 
 - (IBAction)startNewGameTouched:(id)sender {
@@ -41,7 +42,6 @@
 {
     if (buttonIndex) {
         [self resetGame];
-        [self updateUI];
     }
 }
 
