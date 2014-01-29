@@ -21,9 +21,19 @@
         PlayingCard *otherCard = [otherCards firstObject];
         if (otherCard) {
             if ([self.suit isEqualToString:otherCard.suit]) {
-                score = 1;
+                score += 1;
             } else if (self.rank == otherCard.rank) {
-                score = 4;
+                score += 4;
+            }
+        }
+    } else if (otherCards.count == 2) {
+        for(PlayingCard *otherCard in otherCards) {
+            if (otherCard) {
+                if ([self.suit isEqualToString:otherCard.suit]) {
+                    score += 1;
+                } else if (self.rank == otherCard.rank) {
+                    score += 4;
+                }
             }
         }
     }
@@ -35,6 +45,11 @@
 {
     NSArray *rankStrings = [PlayingCard rankStrings];
     return [rankStrings[self.rank] stringByAppendingString:self.suit];
+}
+
+-(NSString *)description
+{
+    return self.contents;
 }
 
 -(void)setSuit:(NSString *)suit

@@ -14,6 +14,7 @@
 
 @property (nonatomic, readonly) NSInteger score;
 @property (nonatomic, readonly, getter = isStarted) BOOL started;
+@property (nonatomic) BOOL hardMode;
 
 -(void)chooseCardAtIndex:(NSUInteger)index;
 -(Card*)cardAtIndex:(NSUInteger)index;
