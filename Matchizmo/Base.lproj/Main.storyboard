@@ -169,10 +169,25 @@
                                     <action selector="startNewGameTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ake-EG-5TK"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Tj-km-zoN">
+                                <rect key="frame" x="251" y="517" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="modeChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="ves-Gg-G99"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hard mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8n-R6-Knr">
+                                <rect key="frame" x="214" y="488" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="hardModeSelector" destination="2Tj-km-zoN" id="FPB-U6-4gk"/>
                         <outlet property="scoreLabel" destination="J1P-UB-gdl" id="78E-Wc-JRS"/>
                         <outlet property="startNewGameButton" destination="vxB-xS-pT6" id="QKv-xz-1is"/>
                         <outletCollection property="cardButtons" destination="uBh-ow-lEX" id="WP0-1a-mYC"/>

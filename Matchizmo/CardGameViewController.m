@@ -10,6 +10,7 @@
 #import "CardMatchingGame.h"
 
 @interface CardGameViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *hardModeSelector;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UIButton *startNewGameButton;
 @property (strong, nonatomic) Deck *deck;
@@ -36,6 +37,8 @@
                                           otherButtonTitles:@"OK", nil];
     [alert show];
     
+}
+- (IBAction)modeChanged:(UISwitch *)sender {
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -78,9 +81,11 @@
         [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
     }
+
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
     
     self.startNewGameButton.enabled = self.game.isStarted;
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
+    self.hardModeSelector.enabled = !self.game.isStarted;
 }
 
 - (NSString *)titleForCard:(Card*)card
